@@ -7,6 +7,7 @@ let currentScore1 = document.getElementById('current--1');
 const diceEl = document.querySelector('.dice');
 const btnRollDice = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnNewGame = document.querySelector('.btn--new');
 let totalScore0 = 0; 
 let totalScore1 = 0;
 let countOne = 0;
@@ -29,13 +30,28 @@ btnRollDice.addEventListener('click', function() {
         countOne++;
         currentScore0.textContent = 0;
         currentScore1.textContent = 0;
+        totalScore0 = 0;
+        totalScore1 = 0;
     }
 })
 
 btnHold.addEventListener('click', function() {
-    console.log(countOne, totalScore0, totalScore1);
-    countOne % 2 === 0 || countOne === 0 ? score0El.textContent = totalScore0 : score1El.textContent = totalScore1;
+    countOne % 2 === 0 || countOne === 0 ? score0El.textContent = Number(score0El.textContent) + totalScore0 : score1El.textContent = Number(score1El.textContent) + totalScore1;
     countOne++;
     currentScore0.textContent = 0;
     currentScore1.textContent = 0;
+    totalScore0 = 0;
+    totalScore1 = 0;
+})
+
+btnNewGame.addEventListener('click', function() {
+diceEl.classList.add('hidden');
+countOne = 0;
+currentScore0.textContent = 0;
+currentScore1.textContent = 0;
+score0El.textContent = 0;
+score1El.textContent = 0;
+totalScore0 = 0
+totalScore1 = 0;
+
 })
