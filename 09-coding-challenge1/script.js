@@ -13,7 +13,7 @@ const players1 = ['Neuer','Pavard','Martinez','Alaba','Davies','Kimmich','Goretz
 const players2 = ['Burki','Schulz','Hummels','Akanji','Hakimi','Weigl','Witsel','Hazard','Brandt','Sancho','Gotze'];
 
 //2.
-const [gk, ...fieldPlayers] = [...players1];
+const [gk, ...fieldPlayers] = players1;
 
 //3.
 const allPlayers = [...players1, ...players2];
